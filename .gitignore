@@ -1,0 +1,17 @@
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+renv/library/
+renv/staging/
+*.Rproj
+
+# Generated reports and temporary output
+reports/
+artifacts/
+_site/
+*.html
+
+# Local credentials
+.Renviron
+.env
