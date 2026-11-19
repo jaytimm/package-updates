@@ -14,8 +14,9 @@ as empty results, schema changes, type changes, and invalid embeddings.
 All reporting stays in this monitoring repository. The monitored package
 repositories and their READMEs are not modified.
 
-See [plans.md](plans.md) for the project outline.
+See [plans.md](plans.md) for the project outline and
+[docs/api-inventory.md](docs/api-inventory.md) for the function-to-service map.
 
 ## Status
 
-Planning and package/API inventory.
+Package/API inventory complete; check-runner design is next.
