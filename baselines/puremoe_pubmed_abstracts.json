@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "check_id": "puremoe_pubmed_abstracts",
+  "created_at": "2026-11-19T18:23:34Z",
+  "schema": [
+    {
+      "path": "root",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.pmid",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.doi",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.year",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.pubtype",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.journal",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.articletitle",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.abstract",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.annotations",
+      "kind": "list",
+      "class": "list",
+      "width": null
+    },
+    {
+      "path": "root.annotations[[1]]",
+      "kind": "data.frame",
+      "class": "data.frame",
+      "width": null
+    },
+    {
+      "path": "root.annotations[[1]].pmid",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.annotations[[1]].type",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.annotations[[1]].DescriptorName",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.annotations[[1]].DescriptorUI",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.annotations[[2]]",
+      "kind": "data.frame",
+      "class": "data.frame",
+      "width": null
+    },
+    {
+      "path": "root.annotations[[2]].pmid",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.annotations[[2]].type",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.annotations[[2]].DescriptorName",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.annotations[[2]].DescriptorUI",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    }
+  ]
+}

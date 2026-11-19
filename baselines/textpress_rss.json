@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "check_id": "textpress_rss",
+  "created_at": "2026-11-19T18:23:35Z",
+  "schema": [
+    {
+      "path": "root",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.doc_id",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.url",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.title",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.published_at",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.source",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.language",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.country",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.feed_url",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.feed_title",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.updated_at",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.author",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.description",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.item_id",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    }
+  ]
+}

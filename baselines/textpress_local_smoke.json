@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "check_id": "textpress_local_smoke",
+  "created_at": "2026-11-19T18:23:35Z",
+  "schema": [
+    {
+      "path": "root",
+      "kind": "list",
+      "class": "list",
+      "width": null
+    },
+    {
+      "path": "root.sentences",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.sentences.doc_id",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.sentences.sentence_id",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.sentences.text",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.sentences.start",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.sentences.end",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.sentences.uid",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.tokens",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.tokens.id",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.tokens.token",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.tokens.start",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.tokens.end",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.regex",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.regex.id",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.regex.doc_id",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.regex.text",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.regex.start",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.regex.end",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.regex.pattern",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.dictionary",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.dictionary.id",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.dictionary.start",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.dictionary.end",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.dictionary.n",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.dictionary.ngram",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.dictionary.term",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.vector",
+      "kind": "data.frame",
+      "class": "data.frame",
+      "width": null
+    },
+    {
+      "path": "root.vector.query",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.vector.method",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.vector.score",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.vector.uid",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "check_id": "puremoe_mesh_trees",
+  "created_at": "2026-11-19T18:23:33Z",
+  "schema": [
+    {
+      "path": "root",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.DescriptorUI",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.DescriptorName",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.tree_location",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.code",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.cats",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.mesh1",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.mesh2",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.tree1",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.tree2",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    }
+  ]
+}

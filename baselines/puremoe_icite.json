@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "check_id": "puremoe_icite",
+  "created_at": "2026-11-19T18:23:33Z",
+  "schema": [
+    {
+      "path": "root",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.pmid",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.citation_count",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.relative_citation_ratio",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.nih_percentile",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.field_citation_rate",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.is_research_article",
+      "kind": "vector",
+      "class": "logical",
+      "width": null
+    },
+    {
+      "path": "root.is_clinical",
+      "kind": "vector",
+      "class": "logical",
+      "width": null
+    },
+    {
+      "path": "root.provisional",
+      "kind": "vector",
+      "class": "logical",
+      "width": null
+    },
+    {
+      "path": "root.citation_net",
+      "kind": "list",
+      "class": "list",
+      "width": null
+    },
+    {
+      "path": "root.citation_net[[1]]",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.citation_net[[1]].from",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.citation_net[[1]].to",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.citation_net[[2]]",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.citation_net[[2]].from",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.citation_net[[2]].to",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.cited_by_clin",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    }
+  ]
+}

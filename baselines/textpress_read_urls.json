@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "check_id": "textpress_read_urls",
+  "created_at": "2026-11-19T18:23:35Z",
+  "schema": [
+    {
+      "path": "root",
+      "kind": "list",
+      "class": "list",
+      "width": null
+    },
+    {
+      "path": "root.text",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.text.doc_id",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.text.url",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.text.node_id",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.text.parent_heading",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.text.text",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.meta",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.meta.doc_id",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.meta.url",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.meta.h1_title",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.meta.date",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.meta.source",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    }
+  ]
+}

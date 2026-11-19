@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "check_id": "puremoe_local_smoke",
+  "created_at": "2026-11-19T18:23:33Z",
+  "schema": [
+    {
+      "path": "root",
+      "kind": "list",
+      "class": "list",
+      "width": null
+    },
+    {
+      "path": "root.endpoints",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.snowball",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.snowball.pmid",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.snowball.seed",
+      "kind": "vector",
+      "class": "logical",
+      "width": null
+    },
+    {
+      "path": "root.snowball.cited_links",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.snowball.citing_links",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.snowball.link_count",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.keyness",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.keyness.DescriptorUI",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.keyness.DescriptorName",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.keyness.corpus_count",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.keyness.corpus_total",
+      "kind": "vector",
+      "class": "integer",
+      "width": null
+    },
+    {
+      "path": "root.keyness.corpus_prop",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.keyness.baseline_count",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.keyness.baseline_total",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.keyness.baseline_prop",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.keyness.direction",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.keyness.log_odds",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.keyness.std_error",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    },
+    {
+      "path": "root.keyness.z",
+      "kind": "vector",
+      "class": "numeric",
+      "width": null
+    }
+  ]
+}

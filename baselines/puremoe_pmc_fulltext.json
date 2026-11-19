@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "check_id": "puremoe_pmc_fulltext",
+  "created_at": "2026-11-19T18:23:34Z",
+  "schema": [
+    {
+      "path": "root",
+      "kind": "data.frame",
+      "class": "data.table/data.frame",
+      "width": null
+    },
+    {
+      "path": "root.pmid",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.section",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    },
+    {
+      "path": "root.text",
+      "kind": "vector",
+      "class": "character",
+      "width": null
+    }
+  ]
+}

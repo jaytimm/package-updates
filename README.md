@@ -17,12 +17,16 @@ repositories and their READMEs are not modified.
 See [plans.md](plans.md) for the project outline and
 [docs/api-inventory.md](docs/api-inventory.md) for the function-to-service map.
 The [runner contract](docs/check-runner.md) documents result and validation
-semantics.
+semantics. [Live check definitions](docs/live-checks.md) records fixtures,
+credentials, and initial probe findings.
 
 ## Status
 
-Package/API inventory and the reusable check runner are complete. Live check
-definitions and report rendering are next.
+Package/API inventory, the reusable check runner, and 17 check definitions are
+complete. Fifteen reviewed structural baselines are tracked. The initial live
+probe identified current failures in the MeSH thesaurus download and Hugging
+Face inference-credit access. Report rendering and GitHub Actions automation
+are next.
 
 ## Check runner
 
@@ -42,4 +46,17 @@ Run the deterministic runner tests with:
 
 ```sh
 Rscript tests/test-check-runner.R
+Rscript tests/test-check-definitions.R
+```
+
+Run all live and local checks with:
+
+```sh
+Rscript scripts/run-checks.R
+```
+
+Run a subset while developing with:
+
+```sh
+Rscript scripts/run-checks.R --checks=puremoe_local_smoke,textpress_local_smoke
 ```
