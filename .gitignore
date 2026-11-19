@@ -9,6 +9,7 @@ renv/staging/
 # Generated reports and temporary output
 reports/
 artifacts/
+results/
 _site/
 *.html
 
