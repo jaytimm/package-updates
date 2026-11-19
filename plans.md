@@ -1,6 +1,6 @@
 # puremoe + textpress Weekly API Health Report – Project Outline
 
-A brief for Claude Code. Goal: a hosted weekly check that runs both of my R packages, puremoe (PubMed and the NIH/NLM stack) and textpress (Hugging Face embeddings and Wikipedia), against their live APIs and emails me one combined, detailed report of every output, so I catch silent breakage, not just errors.
+A brief for Claude Code. Goal: a hosted weekly check that runs both of my R packages, puremoe (PubMed and the NIH/NLM stack) and textpress (Hugging Face embeddings and Wikipedia), against their live APIs and publishes one combined, detailed report of every output, so I catch silent breakage, not just errors.
 
 ## Context
 
@@ -55,19 +55,22 @@ TextPress also fetches web content. There is no search-engine scraping anymore: 
 - Top section: overall status (all good / warnings / failures) with a one-line summary per check.
 - Below that: every check with its full details and sample output, so I can eyeball the real results.
 - Include a diff against the baseline whenever structure changed.
-- Keep past reports, e.g. as workflow artifacts or published to a GitHub Pages history.
+- Publish the current report and report history with GitHub Pages.
+- Keep the current overall status, one-line results, last successful run date, and a link to the detailed report in this monitoring repository's README.
+- Do not modify the README or other files in puremoe, textpress, or any other monitored repository.
 
-## Step 4: Weekly email
+## Step 4: Weekly publication
 
 - GitHub Actions workflow on a weekly schedule, e.g. Monday morning (hosted by GitHub, nothing local).
 - Also allow running it manually with a button (workflow\_dispatch).
-- Email me one combined report each week, with a subject line that shows status at a glance, e.g. "Package check: OK" or "Package check: TextPress 1 WARNING".
-- Store email credentials and any NCBI API key as GitHub Secrets. Walk me through setting those up.
+- Update this monitoring repository's README with the latest status summary and report link.
+- Create one GitHub Discussion in this monitoring repository for each weekly run, with a status-at-a-glance title such as "Package check: OK" or "Package check: TextPress 1 WARNING" and a link to the full report.
+- Store the Hugging Face token and any NCBI API key as GitHub Secrets. Walk me through setting those up.
 - Optional: also open a GitHub issue automatically when something fails.
 
-## Step 4b: Extras for the weekly email
+## Step 4b: Extras for the weekly report
 
-- Keep-alive: GitHub disables scheduled workflows after 60 days of no repo activity. Prevent that (e.g. a keepalive step), and show the last successful run date in the email.
+- Keep-alive: GitHub disables scheduled workflows after 60 days of no repo activity. Prevent that (e.g. a keepalive step), and show the last successful run date in the README and weekly Discussion.
 - CRAN check results: pull each package's CRAN check status across platforms into the report, since failures there can get a package archived.
 - Download stats: use cranlogs to add weekly downloads per package, with a simple trend.
 
@@ -75,11 +78,11 @@ TextPress also fetches web content. There is no search-engine scraping anymore: 
 
 - Explain in plain language what was built and where the files live.
 - Tell me how to update the baseline when NLM makes an intentional change I've adapted to.
-- Keep it low-maintenance. I want to read an email, not babysit a system.
+- Keep it low-maintenance. I want to glance at the central README or weekly Discussion, not babysit a system.
 
 ## Prompt to paste into Claude Code
 
-"Read my puremoe (github.com/jaytimm/puremoe) and textpress (github.com/jaytimm/textpress) R package repos, including the vignettes. Build a GitHub Actions workflow that runs weekly. It should execute the vignette examples and API-calling functions against the live services (puremoe: PubMed, iCite, PubTator3, PMC, MeSH; one check per get\_records() endpoint) and the Hugging Face embedding model (TextPress), compare output structure to a saved baseline, and email me one combined, detailed HTML report with every output and a clear status in the subject line. Flag results that succeed but look wrong (empty, renamed columns, type changes, all-NA, changed embedding dimensions, failed similarity sanity check). Retry once on Hugging Face cold starts. Nothing should run on my local machine. Start by summarizing the functions and endpoints, then follow the outline in this doc."
+"Read my puremoe (github.com/jaytimm/puremoe) and textpress (github.com/jaytimm/textpress) R package repos, including the vignettes. Build a GitHub Actions workflow that runs weekly. It should execute the vignette examples and API-calling functions against the live services (puremoe: PubMed, iCite, PubTator3, PMC, MeSH; one check per get\_records() endpoint) and the Hugging Face embedding model (TextPress), compare output structure to a saved baseline, and publish one combined, detailed HTML report with every output to GitHub Pages. Update only this monitoring repository's README with the current summary and create a weekly Discussion linking to the full report; do not modify the monitored package repositories. Flag results that succeed but look wrong (empty, renamed columns, type changes, all-NA, changed embedding dimensions, failed similarity sanity check). Retry once on Hugging Face cold starts. Nothing should run on my local machine. Start by summarizing the functions and endpoints, then follow the outline in this doc."
 
 ## Later idea: local news RSS/RAG project
 
