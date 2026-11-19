@@ -5,9 +5,10 @@ Automated weekly health checks for the
 [`textpress`](https://github.com/jaytimm/textpress) R packages.
 
 The project will run live API checks in GitHub Actions, compare results with
-saved structural baselines, and publish one detailed HTML report covering both
-packages. This README will show the latest summary, GitHub Pages will retain
-the full report history, and a weekly Discussion will link to each new report.
+saved structural baselines, and publish one detailed Markdown report covering
+both packages. This README will show the latest summary, the repository will
+retain Markdown report history, and a weekly Discussion will link to each new
+report.
 Reports will highlight errors as well as suspicious successful responses, such
 as empty results, schema changes, type changes, and invalid embeddings.
 
@@ -60,3 +61,13 @@ Run a subset while developing with:
 ```sh
 Rscript scripts/run-checks.R --checks=puremoe_local_smoke,textpress_local_smoke
 ```
+
+## Latest health status
+
+<!-- package-monitor-status:start -->
+**Current status: ❌ FAILURE**
+
+Last run: `2026-11-19T18:47:58Z` — 15 OK, 0 warnings, 2 failures.
+
+[View the full GitHub-rendered report](reports/latest.md).
+<!-- package-monitor-status:end -->

@@ -89,17 +89,18 @@ monitor_puremoe_local_smoke <- function() {
 monitor_textpress_local_smoke <- function() {
   corpus <- data.frame(
     doc_id = 1L,
-    text = "Dr. Smith studies public health. The researcher analyzes voting data.",
+    text = "Dr. Smith's well-known work. They've re-tested it.",
     stringsAsFactors = FALSE
   )
   sentences <- textpress::nlp_split_sentences(corpus, by = "doc_id")
   tokens <- textpress::nlp_tokenize_text(
-    sentences, by = c("doc_id", "sentence_id"), include_spans = TRUE
+    sentences, by = c("doc_id", "sentence_id"), include_spans = TRUE,
+    method = "biber"
   )
   cast <- textpress::nlp_cast_tokens(tokens)
-  regex <- textpress::search_regex(sentences, "researcher", by = "doc_id")
+  regex <- textpress::search_regex(sentences, "re-tested", by = "doc_id")
   dictionary <- textpress::search_dict(
-    sentences, terms = c("public health", "voting"), by = "doc_id"
+    sentences, terms = c("work", "it"), by = "doc_id"
   )
   embeddings <- matrix(
     c(1, 0, 0, 1), nrow = 2L, byrow = TRUE,
@@ -113,6 +114,54 @@ monitor_textpress_local_smoke <- function() {
     dictionary = dictionary,
     vector = vector
   )
+}
+
+monitor_textpress_local_validator <- function(output) {
+  issues <- list()
+  add <- function(code, path, message) {
+    issues[[length(issues) + 1L]] <<- monitor_issue(
+      "failure", code, path, message
+    )
+  }
+
+  expected_sentences <- c(
+    "Dr. Smith's well-known work.",
+    "They've re-tested it."
+  )
+  actual_sentences <- trimws(output$sentences$text)
+  if (!identical(actual_sentences, expected_sentences)) {
+    add(
+      "sentence_abbreviation_boundary", "sentences",
+      "Sentence splitting must protect 'Dr.' while retaining the two real sentence boundaries."
+    )
+  }
+
+  expected_tokens <- list(
+    `1.1` = c("Dr", ".", "Smith", "'s", "well-known", "work", "."),
+    `1.2` = c("They", "'ve", "re-tested", "it", ".")
+  )
+  actual_tokens <- split(output$tokens$token, output$tokens$id)
+  if (!identical(actual_tokens[names(expected_tokens)], expected_tokens)) {
+    add(
+      "biber_token_contract", "tokens",
+      "Biber tokens must separate punctuation and contraction suffixes while preserving intra-word hyphens."
+    )
+  }
+
+  sentence_ids <- paste(
+    output$sentences$doc_id, output$sentences$sentence_id, sep = "."
+  )
+  source <- output$sentences$text[match(output$tokens$id, sentence_ids)]
+  recovered <- substring(source, output$tokens$start, output$tokens$end)
+  recovered <- sub("^’", "'", recovered)
+  if (anyNA(recovered) || !identical(recovered, output$tokens$token)) {
+    add(
+      "biber_source_spans", "tokens",
+      "Every Biber token span must recover that token from the original sentence text."
+    )
+  }
+
+  do.call(monitor_bind_issues, issues)
 }
 
 monitor_check_definitions <- function() {
@@ -365,7 +414,8 @@ monitor_check_definitions <- function() {
         list(path = "regex", kind = "data.frame", min_rows = 1L),
         list(path = "dictionary", kind = "data.frame", min_rows = 1L),
         list(path = "vector", kind = "data.frame", min_rows = 2L)
-      )
+      ),
+      validator = monitor_textpress_local_validator
     )
   )
 }

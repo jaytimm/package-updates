@@ -248,7 +248,9 @@ monitor_compare_structure <- function(current, baseline) {
 
 monitor_sample <- function(x, rows = 3L, columns = 8L) {
   if (is.data.frame(x)) {
-    out <- utils::head(x, rows)
+    # Convert data.table subclasses before column selection: `DT[, 1:8]`
+    # evaluates the expression and returns integers instead of selecting fields.
+    out <- as.data.frame(utils::head(x, rows), stringsAsFactors = FALSE)
     out <- out[, seq_len(min(ncol(out), columns)), drop = FALSE]
     return(lapply(out, function(column) {
       if (is.list(column)) vapply(column, function(item) {

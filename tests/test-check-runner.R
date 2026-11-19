@@ -123,4 +123,10 @@ summary <- monitor_summarize(list(unchanged, added, failed))
 stopifnot(nrow(summary) == 3L)
 stopifnot(identical(summary$status, c("ok", "warning", "failure")))
 
+data_table_sample <- monitor_sample(data.table::data.table(
+  pmid = c("1", "2"), title = c("One", "Two")
+))
+stopifnot(identical(names(data_table_sample), c("pmid", "title")))
+stopifnot(identical(data_table_sample$pmid, c("1", "2")))
+
 cat("check-runner tests passed\n")

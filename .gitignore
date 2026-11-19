@@ -6,8 +6,7 @@ renv/library/
 renv/staging/
 *.Rproj
 
-# Generated reports and temporary output
-reports/
+# Temporary output (Markdown reports are tracked)
 artifacts/
 results/
 _site/

@@ -13,6 +13,10 @@ on upstream services.
 - RSS: the POLITICO Congress feed from the bundled `textpress` catalog.
 - Embeddings: two semantically similar cat sentences and one unrelated markets
   sentence.
+- Local TextPress semantics: `Dr.` must not create a false sentence boundary;
+  Biber punctuation and contraction suffixes remain separate tokens;
+  intra-word hyphens remain intact; and token spans must address the original
+  sentence text.
 
 `NCBI_API_KEY` is optional. `HUGGINGFACE_API_TOKEN` is required for the
 embedding check. Neither value is written to results, samples, or baselines.

@@ -51,11 +51,11 @@ TextPress also fetches web content. There is no search-engine scraping anymore: 
 
 ## Step 3: The report
 
-- Generate one combined, detailed HTML report (R Markdown or Quarto) each run, with a section for each package.
+- Generate one combined, detailed Markdown report each run, rendered natively by GitHub, with a section for each package.
 - Top section: overall status (all good / warnings / failures) with a one-line summary per check.
 - Below that: every check with its full details and sample output, so I can eyeball the real results.
 - Include a diff against the baseline whenever structure changed.
-- Publish the current report and report history with GitHub Pages.
+- Commit the current report to `reports/latest.md` and retain dated Markdown history under `reports/history/`.
 - Keep the current overall status, one-line results, last successful run date, and a link to the detailed report in this monitoring repository's README.
 - Do not modify the README or other files in puremoe, textpress, or any other monitored repository.
 
@@ -82,7 +82,7 @@ TextPress also fetches web content. There is no search-engine scraping anymore: 
 
 ## Prompt to paste into Claude Code
 
-"Read my puremoe (github.com/jaytimm/puremoe) and textpress (github.com/jaytimm/textpress) R package repos, including the vignettes. Build a GitHub Actions workflow that runs weekly. It should execute the vignette examples and API-calling functions against the live services (puremoe: PubMed, iCite, PubTator3, PMC, MeSH; one check per get\_records() endpoint) and the Hugging Face embedding model (TextPress), compare output structure to a saved baseline, and publish one combined, detailed HTML report with every output to GitHub Pages. Update only this monitoring repository's README with the current summary and create a weekly Discussion linking to the full report; do not modify the monitored package repositories. Flag results that succeed but look wrong (empty, renamed columns, type changes, all-NA, changed embedding dimensions, failed similarity sanity check). Retry once on Hugging Face cold starts. Nothing should run on my local machine. Start by summarizing the functions and endpoints, then follow the outline in this doc."
+"Read my puremoe (github.com/jaytimm/puremoe) and textpress (github.com/jaytimm/textpress) R package repos, including the vignettes. Build a GitHub Actions workflow that runs weekly. It should execute the vignette examples and API-calling functions against the live services (puremoe: PubMed, iCite, PubTator3, PMC, MeSH; one check per get\_records() endpoint) and the Hugging Face embedding model (TextPress), compare output structure to a saved baseline, and commit one combined, detailed Markdown report with every output to this monitoring repository. Update only this monitoring repository's README with the current summary and create a weekly Discussion linking to the full report; do not modify the monitored package repositories. Flag results that succeed but look wrong (empty, renamed columns, type changes, all-NA, changed embedding dimensions, failed similarity sanity check). Retry once on Hugging Face cold starts. Nothing should run on my local machine. Start by summarizing the functions and endpoints, then follow the outline in this doc."
 
 ## Later idea: local news RSS/RAG project
 
